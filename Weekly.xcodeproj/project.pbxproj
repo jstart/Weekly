@@ -13,6 +13,8 @@
 		AD760D5C22CA886A00C86612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD760D5B22CA886A00C86612 /* Assets.xcassets */; };
 		AD760D5F22CA886A00C86612 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD760D5E22CA886A00C86612 /* Preview Assets.xcassets */; };
 		AD760D6222CA886A00C86612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD760D6022CA886A00C86612 /* LaunchScreen.storyboard */; };
+		AD760D6C22CA8CD700C86612 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD760D6B22CA8CD700C86612 /* Kanna.framework */; };
+		ADBC9F1122CAAEC0008FB48E /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC9F1022CAAEC0008FB48E /* IssueViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		AD760D5E22CA886A00C86612 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD760D6122CA886A00C86612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD760D6322CA886A00C86612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD760D6B22CA8CD700C86612 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = SOURCE_ROOT; };
+		ADBC9F1022CAAEC0008FB48E /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD760D6C22CA8CD700C86612 /* Kanna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				AD760D5422CA886800C86612 /* Weekly */,
+				AD760D6A22CA8CCD00C86612 /* Frameworks */,
 				AD760D5322CA886800C86612 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +64,7 @@
 			children = (
 				AD760D5522CA886800C86612 /* AppDelegate.swift */,
 				AD760D5722CA886800C86612 /* SceneDelegate.swift */,
+				ADBC9F1022CAAEC0008FB48E /* IssueViewModel.swift */,
 				AD760D5922CA886800C86612 /* ContentView.swift */,
 				AD760D5B22CA886A00C86612 /* Assets.xcassets */,
 				AD760D6022CA886A00C86612 /* LaunchScreen.storyboard */,
@@ -75,6 +82,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AD760D6A22CA8CCD00C86612 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD760D6B22CA8CD700C86612 /* Kanna.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +100,7 @@
 				AD760D4E22CA886800C86612 /* Sources */,
 				AD760D4F22CA886800C86612 /* Frameworks */,
 				AD760D5022CA886800C86612 /* Resources */,
+				AD760D6922CA8C9800C86612 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -141,11 +157,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD760D6922CA8C9800C86612 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kanna.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kanna.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AD760D4E22CA886800C86612 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBC9F1122CAAEC0008FB48E /* IssueViewModel.swift in Sources */,
 				AD760D5622CA886800C86612 /* AppDelegate.swift in Sources */,
 				AD760D5822CA886800C86612 /* SceneDelegate.swift in Sources */,
 				AD760D5A22CA886800C86612 /* ContentView.swift in Sources */,
@@ -288,6 +327,11 @@
 				DEVELOPMENT_ASSET_PATHS = "Weekly/Preview\\ Content";
 				DEVELOPMENT_TEAM = 7P284QZ7XV;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Weekly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +352,11 @@
 				DEVELOPMENT_ASSET_PATHS = "Weekly/Preview\\ Content";
 				DEVELOPMENT_TEAM = 7P284QZ7XV;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Weekly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
