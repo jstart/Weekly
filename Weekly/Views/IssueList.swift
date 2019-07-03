@@ -17,6 +17,7 @@ struct IssueListView: View {
         List(issueListViewModel.issues) { issue in
             NavigationButton(destination: IssueDetailView(issue: issue)) {
                 IssueListItem(issue: issue)
+                //TODO: This crashes as it updates the view hierarchy while it is being rendered "Modifying state during view update, this will cause undefined behavior."
 //                .onAppear {
 //                    if self.issueListViewModel.isLoading == false && self.isLastPage(issue) {
 //                        self.issueListViewModel.load(pageIndex: self.pageIndex + 1)
