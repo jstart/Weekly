@@ -18,6 +18,10 @@
 		AD760D5F22CA886A00C86612 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD760D5E22CA886A00C86612 /* Preview Assets.xcassets */; };
 		AD760D6222CA886A00C86612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD760D6022CA886A00C86612 /* LaunchScreen.storyboard */; };
 		AD760D6C22CA8CD700C86612 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD760D6B22CA8CD700C86612 /* Kanna.framework */; };
+		AD9E9FE322CD0895004C76FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E9FE222CD0895004C76FE /* Extensions.swift */; };
+		AD9E9FE622CD13D2004C76FE /* FileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E9FE522CD13D2004C76FE /* FileUtilities.swift */; };
+		AD9E9FEA22CD1484004C76FE /* LoadingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E9FE822CD1484004C76FE /* LoadingRow.swift */; };
+		AD9E9FEB22CD1484004C76FE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9E9FE922CD1484004C76FE /* LoadingView.swift */; };
 		ADBC9F1122CAAEC0008FB48E /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC9F1022CAAEC0008FB48E /* IssueViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,10 @@
 		AD760D6122CA886A00C86612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD760D6322CA886A00C86612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD760D6B22CA8CD700C86612 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = SOURCE_ROOT; };
+		AD9E9FE222CD0895004C76FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD9E9FE522CD13D2004C76FE /* FileUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilities.swift; sourceTree = "<group>"; };
+		AD9E9FE822CD1484004C76FE /* LoadingRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingRow.swift; sourceTree = "<group>"; };
+		AD9E9FE922CD1484004C76FE /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		ADBC9F1022CAAEC0008FB48E /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +89,7 @@
 		AD06277D22CBED6800924235 /* Shared Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD9E9FE722CD1484004C76FE /* Loading */,
 				AD06277122CBEAAC00924235 /* SafariView.swift */,
 			);
 			path = "Shared Views";
@@ -106,6 +115,7 @@
 		AD760D5422CA886800C86612 /* Weekly */ = {
 			isa = PBXGroup;
 			children = (
+				AD9E9FE422CD13BA004C76FE /* Utilities */,
 				AD06277922CBED2000924235 /* App & Scene Delegate */,
 				AD06277A22CBED4100924235 /* ViewModels */,
 				AD06277B22CBED5100924235 /* Views */,
@@ -114,6 +124,7 @@
 				AD760D6022CA886A00C86612 /* LaunchScreen.storyboard */,
 				AD760D6322CA886A00C86612 /* Info.plist */,
 				AD760D5D22CA886A00C86612 /* Preview Content */,
+				AD9E9FE222CD0895004C76FE /* Extensions.swift */,
 			);
 			path = Weekly;
 			sourceTree = "<group>";
@@ -132,6 +143,23 @@
 				AD760D6B22CA8CD700C86612 /* Kanna.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD9E9FE422CD13BA004C76FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AD9E9FE522CD13D2004C76FE /* FileUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AD9E9FE722CD1484004C76FE /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				AD9E9FE822CD1484004C76FE /* LoadingRow.swift */,
+				AD9E9FE922CD1484004C76FE /* LoadingView.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,12 +257,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBC9F1122CAAEC0008FB48E /* IssueViewModel.swift in Sources */,
+				AD9E9FE322CD0895004C76FE /* Extensions.swift in Sources */,
 				AD760D5622CA886800C86612 /* AppDelegate.swift in Sources */,
 				AD760D5822CA886800C86612 /* SceneDelegate.swift in Sources */,
 				AD06277822CBED0A00924235 /* LinkList.swift in Sources */,
+				AD9E9FEB22CD1484004C76FE /* LoadingView.swift in Sources */,
+				AD9E9FEA22CD1484004C76FE /* LoadingRow.swift in Sources */,
 				AD06277422CBECCA00924235 /* IssueList.swift in Sources */,
 				AD06277622CBECEA00924235 /* IssueDetail.swift in Sources */,
 				AD760D5A22CA886800C86612 /* ContentView.swift in Sources */,
+				AD9E9FE622CD13D2004C76FE /* FileUtilities.swift in Sources */,
 				AD06277222CBEAAC00924235 /* SafariView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

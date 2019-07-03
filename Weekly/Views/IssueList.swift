@@ -10,11 +10,19 @@ import SwiftUI
 
 struct IssueListView: View {
     @ObjectBinding private var issueListViewModel = IssueListViewModel()
+    @State private var pageIndex = 1
+    @State private var isLoading = false
     
     var body: some View {
         List(issueListViewModel.issues) { issue in
             NavigationButton(destination: IssueDetailView(issue: issue)) {
                 IssueListItem(issue: issue)
+//                .onAppear {
+//                    if self.issueListViewModel.isLoading == false && self.isLastPage(issue) {
+//                        self.issueListViewModel.load(pageIndex: self.pageIndex + 1)
+//                        self.pageIndex += 1
+//                    }
+//                }
             }
         }
         .navigationBarTitle(Text("iOS Dev Weekly"))
@@ -22,6 +30,14 @@ struct IssueListView: View {
             self.issueListViewModel.load()
         }
     }
+    
+    func isLastPage(_ issue: Issue) -> Bool {
+        if issue.title == issueListViewModel.issues.last?.title {
+            return true
+        }
+        return false
+    }
+    
 }
 
 struct IssueListItem: View {
